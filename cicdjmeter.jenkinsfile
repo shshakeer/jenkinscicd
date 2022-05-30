@@ -11,6 +11,11 @@ pipeline{
  
         password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
     }
+    
+    environment {
+        DEPLOY_TO = 'production'
+    }
+    
     stages{
         stage("A"){
             steps{
@@ -19,6 +24,7 @@ pipeline{
                     branch = "${params.BRANCH}"
                     if ( branch == "Master") {
                         echo "$name is production branch"
+                        echo "${DEPLOY_TO}"
                     } else {
                         echo "$name to be non production"
                     }
