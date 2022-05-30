@@ -21,7 +21,7 @@ pipeline{
     stages{
         stage("A"){
            when  {
-                BRANCH 'master'
+                BRANCH 'Master'
                 }
             steps{
                 script {
