@@ -15,6 +15,7 @@ pipeline{
     environment {
         DEPLOY_TO = 'production'
         JOB_TIME = sh (returnStdout: true, script: "date '+%A %W %Y %X'").trim()
+        MY_CRED = credentials('dockerhubid')
     }
     
     stages{
@@ -27,6 +28,8 @@ pipeline{
                         echo "$name is production branch"
                         echo "branch from environment variables  ${DEPLOY_TO}"
                         echo "job start time ${JOB_TIME}"
+                        echo "Username is $MY_CRED_USR"
+                        echo "Password is $MY_CRED_PSW"
                     } else {
                         echo "$name to be non production"
                     }
