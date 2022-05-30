@@ -22,7 +22,7 @@ pipeline{
         stage("A"){
            when {
                   expression {
-                     return env.BRANCH == 'dev';
+                     return env.BRANCH == 'Dev';
                   }      
             steps{
                 script {
