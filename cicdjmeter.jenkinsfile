@@ -20,9 +20,10 @@ pipeline{
     
     stages{
         stage("A"){
-           when  {
-                BRANCH 'Master'
-                }
+           when {
+                  expression {
+                     return env.BRANCH == 'dev';
+                  }      
             steps{
                 script {
                     name = "${params.NAME}"
