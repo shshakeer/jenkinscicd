@@ -20,8 +20,9 @@ pipeline{
     
     stages{
         stage("A"){
-           when BRANCH 'master' {
-              }
+           when  {
+                BRANCH 'master'
+                }
             steps{
                 script {
                     name = "${params.NAME}"
