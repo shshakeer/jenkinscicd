@@ -14,6 +14,7 @@ pipeline{
     
     environment {
         DEPLOY_TO = 'production'
+        JOB_TIME = sh (returnStdout: true, script: "date '+%A %W %Y %X'").trim()
     }
     
     stages{
@@ -24,7 +25,8 @@ pipeline{
                     branch = "${params.BRANCH}"
                     if ( branch == "Master") {
                         echo "$name is production branch"
-                        echo "${DEPLOY_TO}"
+                        echo "branch from environment variables  ${DEPLOY_TO}"
+                        echo "job start time ${JOB_TIME}"
                     } else {
                         echo "$name to be non production"
                     }
