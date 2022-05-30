@@ -24,6 +24,7 @@ pipeline{
                   expression {
                      return env.BRANCH == 'Dev';
                   }      
+                  }
             steps{
                 script {
                     name = "${params.NAME}"
@@ -46,4 +47,4 @@ pipeline{
         }
     }
 }
-}
+
