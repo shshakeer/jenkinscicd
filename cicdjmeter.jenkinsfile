@@ -47,10 +47,6 @@ pipeline{
         }
     }
     
-    post {
-                 always {
-                     jiraGetServerInfo() 
-                 }
-             }
+
 }
 
