@@ -49,7 +49,7 @@ pipeline{
     
     post {
                  always {
-                     jiraGetServerInfo site: 'http://35.220.178.29:8080/'
+                     jiraGetVersion site: 'http://35.220.178.29:8080/'
                  }
              }
 }
