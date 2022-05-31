@@ -49,7 +49,7 @@ pipeline{
     
     post {
                  always {
-                     jiraComment site: 'http://35.220.178.29:8080/'
+                     jiraSendBuildInfo() 
                  }
              }
 }
